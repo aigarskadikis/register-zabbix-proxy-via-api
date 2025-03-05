@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python3.9
 import os
 import requests
 import json
@@ -10,50 +10,13 @@ urllib3.disable_warnings()
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument(
-    '--proxyName',
-    help='Name of the proxy (required)',
-    type=str,
-    required=True
-)
-
-parser.add_argument(
-    '--PSKIdentity',
-    help='PSK identity',
-    type=str,
-    required=True
-)
-parser.add_argument(
-    '--PSK',
-    help='PSK in plain text here',
-    type=str,
-    required=True
-)
-parser.add_argument(
-    '--LocalAdress',
-    help='IP address for Zabbix proxy. All active agents will point to this.',
-    type=str,
-    required=True
-)
-parser.add_argument(
-    '--api_jsonrpc',
-    help='location of Zabbix API',
-    type=str,
-    required=True
-)
-parser.add_argument(
-    '--api_jsonrpc',
-    help='https://127.0.0.1:44370/api_jsonrpc.php',
-    type=str,
-    required=True
-)
-parser.add_argument(
-    '--token',
-    help='e4ca8af31d6c67e724bec411c23760d2867f96f327446d56ce9db2414c7871b1',
-    type=str,
-    required=True
-)
-
+parser.add_argument('--proxyName',help='Name of the proxy (required)',type=str,required=True)
+parser.add_argument('--PSKIdentity',help='PSKIdentity',type=str,required=True)
+parser.add_argument('--PSK',help='abcabcabcabcabcabcabcabcabcabcab',type=str,required=True)
+parser.add_argument('--LocalAdress',help='IP address for Zabbix proxy. All active agents will point to this.',type=str,required=True)
+parser.add_argument('--LocalPort',help='10051',type=str,required=True)
+parser.add_argument('--api_jsonrpc',help='https://127.0.0.1:44372/api_jsonrpc.php',type=str,required=True)
+parser.add_argument('--token',help='7aad548037e06da49c5f29cfe990355b25ab0bb482565c79cbdb5ef7164fe565',type=str,required=True)
 
 args = parser.parse_args()
 
