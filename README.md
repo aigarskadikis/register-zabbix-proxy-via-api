@@ -35,9 +35,9 @@ Register first proxy:
 --LocalPort 10051 \
 --PSK abcabcabcabcabcabcabcabcabcabcab \
 --PSKIdentity PSKIDENTITY \
---api_jsonrpc http://127.0.0.1/api_jsonrpc.php \
+--api_jsonrpc https://127.0.0.1:44372/api_jsonrpc.php \
 --proxyName granode1 \
---token 814112f276f029a23e423e8f27ce4599d21934f11cc50de13553f3b1c3ff4e1c
+--token 7aad548037e06da49c5f29cfe990355b25ab0bb482565c79cbdb5ef7164fe565
 ```
 
 Register second proxy:
@@ -47,9 +47,9 @@ Register second proxy:
 --LocalPort 10051 \
 --PSK abcabcabcabcabcabcabcabcabcabcab \
 --PSKIdentity PSKIDENTITY \
---api_jsonrpc http://127.0.0.1/api_jsonrpc.php \
+--api_jsonrpc https://127.0.0.1:44372/api_jsonrpc.php \
 --proxyName granode2 \
---token 814112f276f029a23e423e8f27ce4599d21934f11cc50de13553f3b1c3ff4e1c
+--token 7aad548037e06da49c5f29cfe990355b25ab0bb482565c79cbdb5ef7164fe565
 ```
 
 The name of proxy will be "granode1" and "granode2" and name of HA group will be "gra"
