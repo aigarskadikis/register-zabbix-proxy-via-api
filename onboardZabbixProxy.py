@@ -1,18 +1,11 @@
 #!/usr/bin/env python3.10
-import sys
-sys.path.insert(0,'/var/lib/zabbix')
-import config
 import os
 import requests
 import json
 from jsonpath_ng import jsonpath, parse
-import csv
 from pprint import pprint
 import urllib3
 urllib3.disable_warnings()
-
-url = config.api_jsonrpc
-token = config.api_token
 
 import argparse
 
@@ -43,11 +36,24 @@ parser.add_argument(
     required=True
 )
 parser.add_argument(
-    '--LocalPort',
-    help='Listening port for Zabbix active proxy.',
+    '--api_jsonrpc',
+    help='location of Zabbix API',
     type=str,
     required=True
 )
+parser.add_argument(
+    '--api_jsonrpc',
+    help='https://127.0.0.1:44370/api_jsonrpc.php',
+    type=str,
+    required=True
+)
+parser.add_argument(
+    '--token',
+    help='e4ca8af31d6c67e724bec411c23760d2867f96f327446d56ce9db2414c7871b1',
+    type=str,
+    required=True
+)
+
 
 args = parser.parse_args()
 
@@ -56,7 +62,8 @@ identity = args.PSKIdentity
 psk = args.PSK
 ip = args.LocalAdress
 port = args.LocalPort
-
+token = args.token
+url = args.api_jsonrpc
 
 print(f"Proxy Name: {args.proxyName}")
 print(f"Proxy PSK Identity: {args.PSKIdentity}")
